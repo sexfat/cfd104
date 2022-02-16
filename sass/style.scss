@@ -1,0 +1,16 @@
+@import "base/var";
+@import "layout/header";
+@import "layout/footer";
+
+
+body {
+    font-size: $fontsize;
+    .wrapper {
+       width:  1200px;
+       margin: 0 auto;
+      
+
+    }
+
+
+}
