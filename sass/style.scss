@@ -4,7 +4,7 @@
 // 變數宣告 
 
 $fontsize_basic : 16px;
-$font_color: #ececec;
+$font_color: #414141;
 $bgc : rgb(233, 233, 233);
 $null : null; // 空值
 $padding: 10px 10px 20px; //list
@@ -41,9 +41,11 @@ $y : 30;
 $bg_color : blue;
 
 .go {
-    @if $bg_color ==red {
+    @if $bg_color==red {
         background-color: rgb(255, 80, 36);
-    }@else {
+    }
+
+    @else {
         background-color: #fff;
     }
 }
@@ -51,12 +53,38 @@ $bg_color : blue;
 
 $width: 1366px;
 
-.wrapper {
-   @if $width == "full" {
-      width: 100%;
+.box {
+    @if $width=="full" {
+        width: 100%;
 
-   }@else {
-      width:  $width;
-      margin: 0 auto;
-   }
+    }
+
+    @else {
+        width: $width;
+        margin: 0 auto;
+    }
+}
+
+header {
+    width: 100%;
+}
+
+
+
+.main {
+    h1 {
+        font-size: 20px;
+        ul {
+            li {
+                color: rgb(255, 4, 4);
+            }
+        }
+    }
+}
+
+
+.about {
+    h1 {
+        font-size: 30px;
+    }
 }
