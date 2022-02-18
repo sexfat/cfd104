@@ -49,13 +49,15 @@ $bg_color : blue;
 }
 
 
+$width: 1366px;
+
 .wrapper {
 
-   @if $width == 100 {
+   @if $width == "full" {
       width: 100%;
+
+   }@else {
+      width:  $width;
+      margin: 0 auto;
    }
-   
-
-
-
 }

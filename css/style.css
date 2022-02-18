@@ -20,4 +20,9 @@ body {
 .go {
   background-color: #fff;
 }
+
+.wrapper {
+  width: 1366px;
+  margin: 0 auto;
+}
 /*# sourceMappingURL=style.css.map */
