@@ -35,5 +35,27 @@ $y : 30;
     margin: 10 * 10;
     font: round($x / $y); // floor ceil round //    注意除法
 
+}
+
+
+$bg_color : blue;
+
+.go {
+    @if $bg_color ==red {
+        background-color: rgb(255, 80, 36);
+    }@else {
+        background-color: #fff;
+    }
+}
+
+
+.wrapper {
+
+   @if $width == 100 {
+      width: 100%;
+   }
+   
+
+
 
 }
