@@ -1,4 +1,4 @@
-// @import 'layout/header';
+@import 'layout/header';
 
 
 // 變數宣告 
@@ -65,26 +65,6 @@ $width: 1366px;
     }
 }
 
-.header {
-    .logo {
-        width: 80px;
-        height: 80px;
-        background-color: rgb(221, 221, 221);
-    }
-
-    nav {
-        width: 100%;
-
-        ul {
-            list-style: none;
-
-            li {
-                padding: 0px 10px;
-            }
-        }
-
-    }
-}
 
 
 
