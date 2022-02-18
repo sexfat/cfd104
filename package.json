@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "echo \"Error: no test specified\" && exit 1"
+    "dev": "echo \"Error: no test specified\" && exit 1",
+    "安裝套件"  : "npm i",
+    "打包html" : "gulp w"
   },
   "repository": {
     "type": "git",
