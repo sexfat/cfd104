@@ -1,8 +1,14 @@
-const {src , dest} = require('gulp');
+const {
+    src,
+    dest,
+    series,
+    parallel,
+    watch
+} = require('gulp');
 
 const fileinclude = require('gulp-file-include');
 
-exports.html =  function includeHTML() {
+function includeHTML() {
     return src('html/*.html')
         .pipe(fileinclude({
             prefix: '@@',
@@ -11,5 +17,7 @@ exports.html =  function includeHTML() {
         .pipe(dest('./'));
 }
 
-exports.watch = () =>
-  watch(['./html/*.html' , './html/**/*.html'] , includeHTML);
+//watch files
+exports.w = function watchs() {
+    watch(['html/*.html', 'html/**/*.html'], includeHTML);
+}
