@@ -10,3 +10,6 @@ exports.html =  function includeHTML() {
         }))
         .pipe(dest('./'));
 }
+
+exports.watch = () =>
+  watch(['./html/*.html' , './html/**/*.html'] , includeHTML);
