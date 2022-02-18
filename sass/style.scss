@@ -52,7 +52,6 @@ $bg_color : blue;
 $width: 1366px;
 
 .wrapper {
-
    @if $width == "full" {
       width: 100%;
 
