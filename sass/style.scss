@@ -1,16 +1,30 @@
-@import "base/var";
-@import "layout/header";
-@import "layout/footer";
+// @import 'layout/header';
 
+
+// 變數宣告 
+
+$fontsize_basic : 16px;
+$font_color: #ececec;
+$bgc : rgb(233, 233, 233);
+$null : null; // 空值
+$padding: 10px 10px 20px; //list
+
+$btn_color :(
+  "blue" :#0b71f6 ,
+  "yellow" : #fcd810,
+  "green" : #6bf80d
+); //map
 
 body {
-    font-size: $fontsize;
-    .wrapper {
-       width:  1200px;
-       margin: 0 auto;
-      
+ font-size: $fontsize_basic;
+ color: $font_color;
+ background-color: $bgc;
+ margin: $null;
+ padding: $padding;
+}
 
-    }
+.btn {
+
 
 
 }

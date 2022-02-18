@@ -1,9 +1,7 @@
 body {
-  font-size: 26px;
-}
-
-body .wrapper {
-  width: 1200px;
-  margin: 0 auto;
+  font-size: 16px;
+  color: #ececec;
+  background-color: #e9e9e9;
+  padding: 10px 10px 20px;
 }
 /*# sourceMappingURL=style.css.map */
