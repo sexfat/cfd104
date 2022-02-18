@@ -8,21 +8,32 @@ $font_color: #ececec;
 $bgc : rgb(233, 233, 233);
 $null : null; // 空值
 $padding: 10px 10px 20px; //list
-
-$btn_color :(
-  "error" :#f60b0b ,
-  "yellow" : #fcd810,
-  "green" : #6bf80d
-); //map
+$fontFamily : "Times New Roman', Times, serif";
+$btn_color :("error" :#f60b0b,
+    "yellow" : #fcd810,
+    "green" : #6bf80d); //map
 
 body {
- font-size: $fontsize_basic;
- color: $font_color;
- background-color: $bgc;
- margin: $null;
- padding: $padding;
+    font-size: $fontsize_basic;
+    color: $font_color;
+    font-family: $fontFamily;
+    background-color: $bgc;
+    margin: $null;
+    padding: $padding;
 }
 
 .btn {
-   color: map-get($btn_color , "error");
+    color: map-get($btn_color, "error"); // map-get取值
+}
+
+$x :20;
+$y : 30;
+
+.list {
+    width: 10em + 10;
+    height: 10px - 1px;
+    margin: 10 * 10;
+    font: round($x / $y); // floor ceil round //    注意除法
+
+
 }
