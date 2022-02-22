@@ -14,14 +14,29 @@
 
 <body>
     <div class="wrapper">
+    <button id="play">play</button>  
+    <button id="pause">pause</button>  
         <section>
             <div class="box a1">a1</div>
             <div class="box a2">a2</div>
             <div class="box a3">a3</div>
+            <h4>時間軸動畫</h4>
+            <div class="box a4">a4</div>
+            <div class="box a5">a5</div>
+            <div class="text">gsap 套件介紹</div>
         </section>
 
     </div>
     <script>
+       gsap.fromTo('.text' ,{
+           y: 0,
+           opacity: 0
+
+       },{
+           y : 100,
+           opacity: 1,
+           delay: .5
+       })
         gsap.to('.a1', {
             x: 200,
             y: 300,
@@ -43,6 +58,25 @@
         gsap.fromTo('.a3', 
         { x: -85 , opacity : 0}, 
         { x: 30 ,druation: 3  , opacity: 1});
+
+        //timeline
+
+    let tl = gsap.timeline();
+
+    tl.to('.a4' , {
+      x: 400,
+    }).to(['.a4','.a5'], {
+      y: 200,
+    }).to('.a4' , {
+        rotation : 360,
+        repeat : -1,
+        ease: "none"
+    })
+    // 動畫控制
+
+    let
+
+
 
 
 

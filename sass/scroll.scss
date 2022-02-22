@@ -35,6 +35,12 @@ section:nth-child(even) {
 
 }
 
+.text {
+    font-size: 30px;
+    text-align: center;
+
+}
+
 .box {
   @include rect(80px);
   background-color: #9dfa07;
