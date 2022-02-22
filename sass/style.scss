@@ -59,46 +59,41 @@ $bg_color : blue;
 }
 
 
-$width: 1366px;
+
+
+
+
 
 .box {
-    @if $width=="full" {
-        width: 100%;
+    // 呼叫
+    @include rect();
+    @include center(17px, 30px, #333);
+}
 
-    }
-
-    @else {
-        width: $width;
-        margin: 0 auto;
-    }
+.box1 {
+    @include rect();
 }
 
 
 
 
-    .box {
-       // 呼叫
-       @include rect();
-       @include center(17px , 30px , #333);
-    }
-    .box1 {
-       @include rect();     
-     }
-      
+@include body();
+@include layout('.wrapper', 1366px);
+@include layout('.index', 1200px);
+@include layout('.about', full);
 
+@mixin rects($w , $h:$w){
+   width: $w;
+   height: $h;
+   @content;
+}
 
-
-      @include body();
-
-
-
-
-
-
-   
-
-
-
+.box {
+  @include rects(100px , 500px){
+    color :rgb(255, 80, 36);
+    background-color: #fff;
+  };
+}
 
 
 
