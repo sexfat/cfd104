@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,24 +11,42 @@
     <link rel="stylesheet" href="css/scroll.css">
     <title>scroll 設定場景</title>
 </head>
+
 <body>
     <div class="wrapper">
-      <section>
-        <div class="box">a</div>
-      </section>
-    
+        <section>
+            <div class="box a1">a1</div>
+            <div class="box a2">a2</div>
+            <div class="box a3">a3</div>
+        </section>
+
     </div>
     <script>
-       gsap.to('.box' , {
-         x: 200,
-         y : 300,
-         rotation : 360,
-         duration: 3,
-         ease: "elastic.out(1, 0.3)"
-       })
-    
-    
-    
+        gsap.to('.a1', {
+            x: 200,
+            y: 300,
+            repeat: -1,
+            yoyo: false,
+            delay: 3,
+            //rotation : 360,
+            duration: 3,
+            //ease: "elastic.out(1, 0.3)"
+        });
+
+        gsap.from('.a2', {
+            x: 300,
+            druation: 3,
+            repeat: -1,
+            yoyo: true,
+            ease: "none"
+        })
+        gsap.fromTo('.a3', 
+        { x: -85 , opacity : 0}, 
+        { x: 30 ,druation: 3  , opacity: 1});
+
+
+
     </script>
 </body>
+
 </html>
