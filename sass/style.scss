@@ -80,14 +80,15 @@ $width: 1366px;
       height: 100px;
     }
     $value : 30px;
-    @mixin center($top , $bottom){
+    @mixin center($top , $bottom:5px , $color:red){
        margin: $top auto $bottom;
+       color:$color;
     }
 
     .box {
        // 呼叫
        @include rect();
-       @include center(10px , 20px);
+       @include center(10px , 30px);
     }
     .box1 {
        @include rect();     
