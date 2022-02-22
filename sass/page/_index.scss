@@ -1,10 +1,20 @@
 .main {
     h1 {
-        font-size: 20px;
+        font-size: 40px;
+        @include t(){
+           font-size: 30px;
+        
+        }
 
         ul {
             li {
+             @include m(){
+               width:  300px;
+             }
                 color: rgb(255, 4, 4);
+                @include t(){
+                  color : blue
+                }
             }
         }
     }

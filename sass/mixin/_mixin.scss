@@ -61,3 +61,17 @@ $value : 30px;
     }
 }
 
+
+// respond
+@mixin m() {
+    @media screen and (max-width: $m) {
+        @content;
+    }
+}
+
+@mixin t() {
+    @media screen and (max-width: $t) {
+        @content;
+    }
+}
+
