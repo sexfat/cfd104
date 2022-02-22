@@ -1,4 +1,15 @@
 // @import "../node_modules/bootstrap/scss/bootstrap";
+
+// var
+@import 'base/var';
+
+
+
+// mixin
+@import 'mixin/mixin';
+
+
+// layout 
 @import 'layout/header';
 
 // page 
@@ -8,17 +19,7 @@
 
 
 
-// 變數宣告 
 
-$fontsize_basic : 16px;
-$font_color: #414141;
-$bgc : rgb(233, 233, 233);
-$null : null; // 空值
-$padding: 10px 10px 20px; //list
-$fontFamily : "Times New Roman', Times, serif";
-$btn_color :("error" :#f60b0b,
-    "yellow" : #fcd810,
-    "green" : #6bf80d); //map
 
 body {
     font-size: $fontsize_basic;
@@ -73,26 +74,26 @@ $width: 1366px;
 }
 
 
-//sass 函式
-  // 宣告
-    @mixin rect(){
-      width: 50px;
-      height: 100px;
-    }
-    $value : 30px;
-    @mixin center($top , $bottom:5px , $color:red){
-       margin: $top auto $bottom;
-       color:$color;
-    }
+
 
     .box {
        // 呼叫
        @include rect();
-       @include center(10px , 30px);
+       @include center(17px , 30px , #333);
     }
     .box1 {
        @include rect();     
      }
+      
+
+
+
+      @include body();
+
+
+
+
+
 
    
 
