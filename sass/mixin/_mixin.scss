@@ -75,3 +75,9 @@ $value : 30px;
     }
 }
 
+@mixin c($w){
+    @media screen and (max-width: $w) {
+        @content;
+    } 
+}
+
