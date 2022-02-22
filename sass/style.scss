@@ -82,20 +82,59 @@ $bg_color : blue;
 @include layout('.index', 1200px);
 @include layout('.about', full);
 
-@mixin rects($w , $h:$w){
-   width: $w;
-   height: $h;
-   @content;
+@mixin rects($w, $h:$w) {
+    width: $w;
+    height: $h;
+    @content;
 }
 
 .box {
-  @include rects(100px , 500px){
-    color :rgb(255, 80, 36);
-    background-color: #fff;
-  };
+    @include rects(100px, 500px) {
+        color: rgb(255, 80, 36);
+        background-color: #fff;
+    }
+
+    ;
+}
+
+.log {
+    width: 100px;
+
+    @media screen and (max-width: 576px) {
+        width: 200px;
+    }
+
+}
+
+.log {
+    width: 100px;
 }
 
 
 
+// respond
+@mixin m() {
+    @media screen and (max-width: 576px) {
+        @content;
+    }
+}
+
+@mixin t() {
+    @media screen and (max-width: 996px) {
+        @content;
+    }
+}
+
+@include t(){
+   body {
+      font-size: 20px;
+   }
+}
+
+@include m(){
+   body {
+      font-size: 20px;
+   }
+}
 
 
