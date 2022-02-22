@@ -114,17 +114,17 @@ $bg_color : blue;
 
 // respond
 @mixin m() {
-    @media screen and (max-width: 576px) {
+    @media screen and (max-width: $m) {
         @content;
     }
 }
 
 @mixin t() {
-    @media screen and (max-width: 996px) {
+    @media screen and (max-width: $t) {
         @content;
     }
 }
-
+// 使用
 @include t(){
    body {
       font-size: 20px;
