@@ -52,6 +52,7 @@ exports.w = function watchs() {
 const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
 
+// 上線用
 function ugjs(){
    return src('js/*.js')
    .pipe(uglify())
