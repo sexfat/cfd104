@@ -69,7 +69,7 @@ const cleanCSS = require('gulp-clean-css');
 
 function cleanC(){
   return  src('css/*.css')//來源
-  .pipe(cleanCSS())// 壓縮
+  .pipe(cleanCSS())// 壓縮css
   .pipe(rename({
      extname : '.min.css'
    }))
@@ -94,6 +94,7 @@ const sass = require('gulp-sass')(require('sass'));
 function sassstyle() {
     return src('./sass/*.scss')
         .pipe(sass.sync().on('error', sass.logError))
+        .pipe(cleanCSS())// 壓縮css
         .pipe(dest('./assets/css'));
 }
 
