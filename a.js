@@ -1,0 +1,1 @@
+function sum(u,n){return u*n}sum(20,30);
