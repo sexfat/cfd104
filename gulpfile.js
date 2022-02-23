@@ -63,3 +63,15 @@ function ugjs(){
 }
 
 exports.js = ugjs
+
+//壓縮css 
+const cleanCSS = require('gulp-clean-css');
+
+function cleanC(){
+  return  src('css/*.css')//來源
+  .pipe(cleanCSS())// 壓縮
+  .pipe(dest('css/mini')) // 目的地
+}
+
+exports.css = cleanC
+
