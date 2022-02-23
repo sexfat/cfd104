@@ -29,37 +29,37 @@ function copy(){
 exports.c = copy // 任務執行
 
 
+//以下開發流程 
 
-
-
+// 1. html 樣板
 const fileinclude = require('gulp-file-include');
 
 function includeHTML() {
-    return src('html/*.html')
+    return src('src/*.html')
         .pipe(fileinclude({
             prefix: '@@',
             basepath: '@file'
         }))
-        .pipe(dest('./'));
+        .pipe(dest('./dist'));
 }
 
 //watch files
-exports.w = function watchs() {
-    watch(['html/*.html', 'html/**/*.html'], includeHTML);
-}
+// exports.w = function watchs() {
+//     watch(['html/*.html', 'html/**/*.html'], includeHTML);
+// }
 
 
 const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
 
-// 上線用
+// 2.js
 function ugjs(){
-   return src('js/*.js')
+   return src('src/js/*.js')
    .pipe(uglify())
    .pipe(rename({
      extname : '.min.js'
    }))
-   .pipe(dest('./'));
+   .pipe(dest('./dist/js'));
 }
 
 exports.js = ugjs
@@ -86,21 +86,40 @@ function concatCss(){
 
 exports.allcss = concatCss
 
-// sass編譯
+// 3.sass編譯
 
 const sass = require('gulp-sass')(require('sass'));
 
 
 function sassstyle() {
-    return src('./sass/*.scss')
+    return src('src/sass/*.scss')
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(cleanCSS())// 壓縮css
-        .pipe(dest('./assets/css'));
+        .pipe(dest('./dist/css'));
 }
 
 exports.scss = sassstyle;
 
+// 4.瀏覽器同步
+const browserSync = require('browser-sync');
+const reload = browserSync.reload;
 
+
+function browser(done) {
+    browserSync.init({
+        server: {
+            baseDir: "./dist",
+            index: "index.html"
+        },
+        port: 3000
+    });
+    done();
+    watch(['src/*.html', 'src/**/*.html'], includeHTML).on('change' , reload);
+    watch(['src/js/*.js', 'src/js/**/*.js'], ugjs).on('change' , reload);
+    watch(['src/sass/*.scss', 'src/sass/**/*.scss'], sassstyle).on('change' , reload);
+}
+
+exports.default = browser;
 
 
 
