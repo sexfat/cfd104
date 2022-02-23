@@ -8,16 +8,18 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/vue/dist/vue.min.js"></script>
-     @@include('layout/scripts.html');
+     @@include('layout/scripts.html', {
+        "title" : "首頁"
+     })
 
-    <title>Document</title>
+ 
 </head>
 
 <body>
     <div class="wrapper main">
     <!-- header -->
         @@include('layout/header.html', {
-        "title" : "首頁1111"
+        "title" : "首頁 h1"
      });
         <h1>首頁
             <span>

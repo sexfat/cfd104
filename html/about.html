@@ -9,7 +9,9 @@
 </head>
 <body>
 <div class="wrapper about">
- @@include('layout/header.html')
+ @@include('layout/header.html', {
+   "title" : "關於我們"
+ })
   <h1>about</h1>
 </div>
 @@include('layout/footer.html') 
