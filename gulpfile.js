@@ -6,6 +6,27 @@ const {
     watch
 } = require('gulp');
 
+
+function missionA(cb) {
+    console.log('missionA');
+    cb();
+}
+
+
+function missionB(cb) {
+    console.log('missionB');
+    cb();
+}
+
+exports.async = series(missionB , missionA);
+exports.sync =   parallel(missionA , missionB);
+
+
+
+
+
+
+
 const fileinclude = require('gulp-file-include');
 
 function includeHTML() {
