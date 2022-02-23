@@ -22,6 +22,11 @@ exports.async = series(missionB , missionA);
 exports.sync =   parallel(missionA , missionB);
 
 
+function copy(){
+     return src('html/a.html').pipe(dest('./'))
+}
+
+exports.c = copy
 
 
 
