@@ -76,6 +76,34 @@ function cleanC(){
   .pipe(dest('css')) // 目的地
 }
 
+// 合併css
+
+var concat = require('gulp-concat');
+
+function concatCss(){
+   return src('css/*.css').pipe(concat('all.css')).pipe(dest('css/all/'))
+}
+
+exports.allcss = concatCss
+
+// sass編譯
+
+const sass = require('gulp-sass')(require('sass'));
+
+
+function sassstyle() {
+    return src('./sass/*.scss')
+        .pipe(sass.sync().on('error', sass.logError))
+        .pipe(dest('./assets/css'));
+}
+
+exports.scss = sassstyle;
+
+
+
+
+
+
 // 組合任務
 
 exports.all = series(ugjs ,cleanC)
