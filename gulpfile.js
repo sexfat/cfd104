@@ -50,9 +50,15 @@ exports.w = function watchs() {
 
 
 const uglify = require('gulp-uglify');
+const rename = require('gulp-rename');
 
 function ugjs(){
-   return src('js/a.js').pipe(uglify()).pipe(dest('./'));
+   return src('js/*.js')
+   .pipe(uglify())
+   .pipe(rename({
+     extname : '.min.js'
+   }))
+   .pipe(dest('./'));
 }
 
 exports.js = ugjs
