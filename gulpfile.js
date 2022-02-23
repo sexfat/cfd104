@@ -52,6 +52,7 @@ exports.js = ugjs
 // 3.sass編譯
 
 const sass = require('gulp-sass')(require('sass'));
+const cleanCSS = require('gulp-clean-css');
 
 
 function sassstyle() {
