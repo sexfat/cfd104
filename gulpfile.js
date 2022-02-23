@@ -51,10 +51,14 @@ function includeHTML() {
 
 const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
+const babel = require('gulp-babel');
 
 // 2.js
 function ugjs(){
    return src('src/js/*.js')
+   .pipe(babel({
+            presets: ['@babel/env']
+        })) // es6 -> es5
    .pipe(uglify())
    .pipe(rename({
      extname : '.min.js'
