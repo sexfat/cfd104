@@ -18,15 +18,15 @@ function missionB(cb) {
     cb();
 }
 
-exports.async = series(missionB , missionA);
-exports.sync =   parallel(missionA , missionB);
+exports.async = series(missionB , missionA); // 先執行 missionA 在執行missionB
+exports.sync =   parallel(missionA , missionB); //兩個任務同時執行
 
 
 function copy(){
-     return src('html/a.html').pipe(dest('./'))
+     return src('html/a.html').pipe(dest('./'))// 由html/a.html 搬到 ./
 }
 
-exports.c = copy
+exports.c = copy // 任務執行
 
 
 
@@ -47,3 +47,12 @@ function includeHTML() {
 exports.w = function watchs() {
     watch(['html/*.html', 'html/**/*.html'], includeHTML);
 }
+
+
+const uglify = require('gulp-uglify');
+
+function ugjs(){
+   return src('js/a.js').pipe(uglify()).pipe(dest('./'));
+}
+
+exports.js = ugjs
