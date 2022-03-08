@@ -19,5 +19,9 @@
   "homepage": "https://github.com/sexfat/cfd104#readme",
   "dependencies": {
     "jquery": "^3.6.0"
+  },
+  "devDependencies": {
+    "css-loader": "^5.2.4",
+    "style-loader": "^2.0.0"
   }
 }
