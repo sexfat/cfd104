@@ -6,6 +6,7 @@ console.log(sum(1,3));
 
 import $ from 'jquery';
 import './css/style.css';
+import './css/header.css';
 import gsap from 'gsap';
 
 $('body').css('background-color' , 'red');
