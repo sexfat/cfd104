@@ -13,7 +13,7 @@ import './sass/style.scss';
 import gsap from 'gsap';
 
 
-$('body').css('background-color' , 'red');
+$('body').css('background-color' , '#f20');
 
 gsap.from('h1' , {
    y: -150,
