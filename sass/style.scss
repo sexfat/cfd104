@@ -3,5 +3,6 @@
      height: $h;
 }
 .box {
-  @include rect(100px, 100px);
+  @include rect(200px, 100px);
+  margin-top: 10px;
 }
