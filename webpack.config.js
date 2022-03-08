@@ -20,5 +20,5 @@ module.exports = {
     },               // 處裡對應模組
     // plugins: [],             // 對應的插件
     // devServer: {},           // 服務器配置
-    mode: 'production'      // 開發模式配置development   /  上線用 production
+    mode: 'production'     // 開發模式配置development   /  上線用 production
 }
