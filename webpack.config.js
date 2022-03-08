@@ -24,7 +24,7 @@ module.exports = {
         }]
 
     },               // 處裡對應模組
-   plugins: [
+    plugins: [
         new MiniCssExtractPlugin({
             filename: "./all.css"
         })
