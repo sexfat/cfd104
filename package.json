@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/sexfat/cfd104/issues"
   },
-  "homepage": "https://github.com/sexfat/cfd104#readme"
+  "homepage": "https://github.com/sexfat/cfd104#readme",
+  "dependencies": {
+    "jquery": "^3.6.0"
+  }
 }
