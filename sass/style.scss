@@ -1,0 +1,7 @@
+@mixin rect($w , $h) {
+     width: $w;
+     height: $h;
+}
+.box {
+  @include rect(100px, 100px);
+}

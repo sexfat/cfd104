@@ -18,11 +18,14 @@
   },
   "homepage": "https://github.com/sexfat/cfd104#readme",
   "dependencies": {
-    "gsap": "^3.9.1"
+    "gsap": "^3.9.1",
+    "jquery": "^3.6.0"
   },
   "devDependencies": {
     "css-loader": "^5.2.4",
     "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^5.0.0",
+    "sass-loader": "^10.1.1",
     "style-loader": "^2.0.0"
   }
 }

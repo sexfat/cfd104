@@ -7,19 +7,19 @@ module.exports = {
      path: path.resolve(__dirname, 'dist'),
      filename: 'bundle.js'
     },              // 出口文件
-   module: {
+    module: {
         rules: [{
             // 格式
-            test: /\.css$/,
-            //順序是由下到上 css > style
+            test: /\.(sass|scss|css)$/,
+            //順序是由下到上 sass > css > style
             use: [{
                 loader: MiniCssExtractPlugin.loader,
                 options: {
                   publicPath: './dist'
                 }
               },
-                //'style-loader', 會跟原本的衝突 
-                'css-loader'
+                'css-loader',
+                'sass-loader'
             ],
         }]
 
