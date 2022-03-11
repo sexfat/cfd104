@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {
     CleanWebpackPlugin
 } = require('clean-webpack-plugin');
+const webpack  = require('webpack');
 
 
 
@@ -44,7 +45,11 @@ module.exports = {
             //來源
             filename : 'index.html'
             // 目的地
-        })
+        }),
+         new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery'
+          })
 
     ],          // 對應的插件
     devServer: {
