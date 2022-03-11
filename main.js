@@ -5,6 +5,7 @@ function sum(x , y) {
 console.log(sum(1,3));
 
 // import $ from 'jquery';
+import Vue from 'vue';
 import './css/style.css';
 import './css/header.css';
 // sass 資源
@@ -23,3 +24,10 @@ gsap.from('h1' , {
 })
 
 
+
+new Vue({
+   el : '#app',
+   data : {
+      message : 'vue webpack !!!!'
+   }
+})

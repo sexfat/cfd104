@@ -4,16 +4,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {
     CleanWebpackPlugin
 } = require('clean-webpack-plugin');
-const webpack  = require('webpack');
+const webpack = require('webpack');
 
 
 
 module.exports = {
-    entry: {index : './main.js'
+    entry: {
+        index: './main.js'
     },               // 入口文件
     output: {
-     path: path.resolve(__dirname, 'dist'),
-     filename: 'bundle.js'
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'bundle.js'
     },              // 出口文件
     module: {
         rules: [{
@@ -23,33 +24,37 @@ module.exports = {
             use: [{
                 loader: MiniCssExtractPlugin.loader,
                 options: {
-                  publicPath: './dist'
+                    publicPath: './dist'
                 }
-              },
+            },
                 'css-loader',
                 'sass-loader'
             ],
         }]
 
     },               // 處裡對應模組
-   plugins: [
+    plugins: [
         //清理舊的檔案
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: "./[name].css"
         }),
         new HtmlWebpackPlugin({
-            chunks : ['index'],  //選擇注入資源 chunk
-            inject  : 'body', //預設<body> js </body>  head or body
-            template : './index.html',
+            chunks: ['index'],  //選擇注入資源 chunk
+            inject: 'body', //預設<body> js </body>  head or body
+            template: './index.html',
             //來源
-            filename : 'index.html'
+            filename: 'index.html'
             // 目的地
         }),
-         new webpack.ProvidePlugin({
+        new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery'
-          })
+        }),
+
+        // new webpack.ProvidePlugin({
+        //     Vue: ['vue/dist/vue.esm.js', 'default']
+        // })
 
     ],          // 對應的插件
     devServer: {
@@ -60,5 +65,10 @@ module.exports = {
         index: 'index.html',
         open: true
     },          // 服務器配置
+    resolve: {
+        alias: {
+           vue: 'vue/dist/vue.js'
+        }
+      },
     mode: 'development'     // 開發模式配置development   /  上線用 production
 }
