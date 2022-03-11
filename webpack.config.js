@@ -69,6 +69,6 @@ module.exports = {
         alias: {
            vue: 'vue/dist/vue.js'
         }
-      },
+      }, // 解決 vue 的路徑問題
     mode: 'development'     // 開發模式配置development   /  上線用 production
 }
